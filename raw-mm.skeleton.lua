@@ -98,7 +98,7 @@ bals = bals or {
   herb = true, sip = true, sparkle = true,
   purgative = true,  salve = true, scroll = true,
   balance = true, equilibrium = true, focus = true, steam = true,
-  allheale = true, tea = true, leftarm = "unset", rightarm = "unset",
+  allheale = true, tea = true, leftarm = "unset", rightarm = "unset", beast = true,
 #if skills.psionics then
   super = "unset", sub = "unset", id = "unset",
 #end
@@ -312,8 +312,8 @@ check_wafer = function(sync_mode)
 #end
       then
 
-      prios[i] = (not sync_mode) and j.p.wafer.aspriority or j.p.wafer.spriority
-      gotsomething = true
+        prios[i] = (not sync_mode) and j.p.wafer.aspriority or j.p.wafer.spriority
+        gotsomething = true
       end
     end
 
@@ -321,6 +321,7 @@ check_wafer = function(sync_mode)
   end
 
   check(affs)
+  if sys.deffing or conf.keepup then check(dict_wafer) end
 
   -- have nada?
   if not next(prios) then return end
@@ -409,7 +410,11 @@ check_ice = function(sync_mode)
   -- get all prios in the list
   local prios = {}
   for i, j in pairs(affs) do
-    if j.p.ice and j.p.ice.isadvisable() and not ignored(i, "ice") and not overhaul[i] then
+    if j.p.ice and j.p.ice.isadvisable() and not ignored(i, "ice") and not overhaul[i]
+#if skills.healing then
+      and sk.wont_heal_this(i)
+#end
+    then
       prios[i] = (not sync_mode) and j.p.ice.aspriority or j.p.ice.spriority
     end
   end
@@ -1292,6 +1297,25 @@ function sk.tangle_symptom()
   end)
 end
 
+sk.roped_count = 0
+function sk.roped_symptom()
+  if not paragraph_length == 0 or affs.roped then return end
+
+  sk.roped_count = sk.roped_count + 1
+
+  if sk.roped_count >= 2 then
+    valid.simpleroped()
+    echo"\n" echof("auto-detected roped.")
+    sk.roped_count = 0
+    return
+  end
+
+  tempTimer(sys.wait * 2, function ()
+    sk.roped_count = sk.roped_count - 1
+    if sk.roped_count < 0 then sk.roped_count = 0 end
+  end)
+end
+
 local function update_eventaffs()
   if conf.eventaffs then
     -- addaff
@@ -1598,7 +1622,7 @@ sk.limbnames = {
       {glandular   = {"slickness"}},
       {senses      = {"concussion", "sensitivity", "vertigo", "deaf", "blind"}},
       {neurosis    = {"impatience", "loneliness", "shyness", "anorexia", "void", "masochism"}},
-      {breaks      = {"crippledrightarm", "crippledleftarm", "crippledleftleg", "crippledrightleg", "brokenjaw", "brokenrightwrist", "brokenleftwrist", "twistedleftarm", "twistedrightarm", "twistedrightleg", "twistedleftleg"}},
+      {breaks      = {"crippledrightarm", "crippledleftarm", "crippledleftleg", "crippledrightleg", "brokenjaw", "brokenrightwrist", "brokenleftwrist", "twistedleftarm", "twistedrightarm", "twistedrightleg", "twistedleftleg", "damagedleftarm", "damagedrightarm", "damagedleftleg", "damagedrightleg"}},
       {choleric    = {"vomiting", "vomitblood", "worms", "hypersomnia", "dysentery"}},
       {curses      = {"recklessness", "healthleech", "achromaticaura", "powerspikes", "manabarbs", "egovice", "minortimewarp", "moderatetimewarp", "majortimewarp", "massivetimewarp"}},
       {muscles     = {"paralysis", "rigormortis", "weakness", "dislocatedleftarm ", "dislocatedrightarm", "dislocatedrightleg", "dislocatedleftleg", "gashedcheek", "slicedtongue", "puncturedchest", "missingrightear", "missingleftear", "slicedrightbicep", "slicedleftbicep", "slicedleftthigh", "slicedrightthigh", "openchest", "opengut", "stiffleftarm", "stiffrightarm", "stiffhead", "stiffgut", "stiffchest", "slitthroat"}},
@@ -1611,7 +1635,7 @@ sk.limbnames = {
       {depression  = {"addiction", "gluttony"}},
       {auric       = {"aeon", "pacifism", "peace", "powersink", "justice", "jinx", "succumb"}},
       {mania       = {"confusion", "dementia", "hallucinating", "void", "paranoia", "stupidity", "scrambledbrain", "slightinsanity", "moderateinsanity",  "majorinsanity", "massiveinsanity"}},
-      {regenerate  = {{burstorgans = "gut"}, {missingrightleg = "legs"}, {missingleftarm = "arms"}, {missingleftleg = "legs"}, {missingrightarm = "arms"}, {eyepeckleft = "head"}, {eyepeckright = "head"}, {mangledleftleg = "legs"}, {mangledleftarm = "arms"}, {mangledrightarm = "arms"}, {mangledrightleg = "legs"}, {crushedchest = "chest"}, {collapsedrightnerve = "arms"}, {collapsedlungs = "chest"}, {collapsedleftnerve = "arms"}, {crackedleftelbow = "arms"}, {crackedrightelbow = "arms"}, {crackedrightkneecap = "legs"}, {crackedleftkneecap = "legs"}, {disembowel = "gut"}, {chestpain = "chest"}, {rupturedstomach = "gut"}, {tendonright = "legs"}, {tendonleft = "legs"}, {concussion = "head"}, {damagedhead = "head"}, {shatteredleftankle = "legs"}, {shatteredrightankle = "legs"}, {shatteredjaw = "head"}}}
+      {regenerate  = {{burstorgans = "gut"}, {missingrightleg = "legs"}, {missingleftarm = "arms"}, {missingleftleg = "legs"}, {missingrightarm = "arms"}, {eyepeckleft = "head"}, {eyepeckright = "head"}, {mangledleftleg = "legs"}, {mangledleftarm = "arms"}, {mangledrightarm = "arms"}, {mangledrightleg = "legs"}, {crushedchest = "chest"}, {collapsedrightnerve = "arms"}, {collapsedlungs = "chest"}, {collapsedleftnerve = "arms"}, {crackedleftelbow = "arms"}, {crackedrightelbow = "arms"}, {crackedrightkneecap = "legs"}, {crackedleftkneecap = "legs"}, {disembowel = "gut"}, {chestpain = "chest"}, {rupturedstomach = "gut"}, {tendonright = "legs"}, {tendonleft = "legs"}, {concussion = "head"}, {damagedhead = "head"}, {shatteredleftankle = "legs"}, {shatteredrightankle = "legs"}, {shatteredjaw = "head"}, {mutilatedleftarm = "arms"}, {mutilatedrightarm = "arms"}, {mutilatedleftleg = "legs"}, {mutilatedrightleg = "legs"}}}
     }
     --[[ doesn't cure: leglock, throatlock, severedspine, puncturedaura ]]
 

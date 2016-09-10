@@ -241,6 +241,12 @@ config_dict = pl.OrderedMap {
     installstart = function () conf.cleanse = nil end,
     installcheck = function () echof("Should the system make use of any type of cleanse effect for curing?") end
   }},
+#conf_name = "autohide"
+  {$(conf_name) = {
+    type = "boolean",
+    onenabled = function () echof("<0,250,0>Will%s auto hide inactive skillsets on deflist.", getDefaultColor()) end,
+    ondisabled = function () echof("<250,0,0>Won't%s autohide inactive skillsets on deflist.", getDefaultColor()) end,
+  }},
 #conf_name = "rockclimbing"
   {$(conf_name) = {
     type = "boolean",
@@ -958,6 +964,43 @@ config_dict = pl.OrderedMap {
       end
     end
   }},
+#conf_name = "focus"
+  {$(conf_name) = {
+    type = "string",
+    onset = function()
+      local aff = conf.focus
+      if (dict[aff].lucidity and not dict[aff].lucidity.focus) and (dict[aff].wafer and not dict[aff].wafer.focus) and (dict[aff].steam and not dict[aff].steam.focus) then
+        echof("%s isn't an affliction we can focus.", aff)
+        return
+      end
+      if not me.focus[aff] then me.focus[aff] = true else me.focus[aff] = nil end
+
+      if me.focus[aff] then
+        echof("Will be focusing %s always.", aff)
+      else
+        echof("Will not be focusing %s always.", aff)
+      end
+    end
+  }},
+#conf_name = "aeonfocus"
+  {$(conf_name) = {
+    type = "boolean",
+    onenabled = function () echof("<0,250,0>Will%s use focus in aeon.", getDefaultColor()) end,
+    ondisabled = function () echof("<250,0,0>Won't%s use focus in aeon.", getDefaultColor()) end,
+  }},
+#conf_name = "beastfocus"
+  {$(conf_name) = {
+    type = "boolean",
+    onenabled = function () echof("<0,250,0>Will%s use beastfocus if possible.", getDefaultColor()) end,
+    ondisabled = function () echof("<250,0,0>Won't%s use beastfocus.", getDefaultColor()) end,
+  }},
+#conf_name = "powerfocus"
+  {$(conf_name) = {
+    type = "boolean",
+    onenabled = function () echof("<0,250,0>Will%s use powerfocus if possible.", getDefaultColor()) end,
+    ondisabled = function () echof("<250,0,0>Won't%s use powerfocus.", getDefaultColor()) end,
+  }},
+
 #if skills.illusions then
 #conf_name = "changerace"
   {$(conf_name) = {
@@ -1100,6 +1143,12 @@ config_dict = pl.OrderedMap {
     onenabled = function () echof("<0,250,0>Will%s automatically enable/disable arena mode as you enter/leave the arena.", getDefaultColor()) end,
     ondisabled = function () echof("<250,0,0>Won't%s automatically enable/disable arena mode as you enter/leave the arena..", getDefaultColor()) end,
   }}, 
+#conf_name = "arena"
+  {$(conf_name) = {
+    type = "boolean",
+    onenabled = function () echof("<0,250,0>Will%s operate in arena mode.", getDefaultColor()) end,
+    ondisabled = function () echof("<0,250,0>Won't%s operate in arena mode.", getDefaultColor()) end,
+  }},
 #conf_name = "oldwarrior" 
   {$(conf_name) = {
     type = "boolean",

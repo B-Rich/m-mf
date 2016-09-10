@@ -225,6 +225,29 @@ mm.ignore_illusion()</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>no beast on beast focus</name>
+                        <script>if mm.conf.beastfocus then
+	mm.config.set(&quot;beastfocus&quot;, false, true)
+	mm.echo(&quot;No beast present, turning off beast focus&quot;)
+end</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You have no beast here.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>m&amp;m cure clumsiness herb</name>
                         <script>mm.valid.herb_cured_clumsiness()</script>
                         <triggerType>0</triggerType>
@@ -2171,8 +2194,10 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your blood regains its ability to clot.</string>
+                            <string>You have cured haemophilia.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -2191,8 +2216,10 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The sapping of your power subsides.</string>
+                            <string>You have cured powersap.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -2211,8 +2238,10 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Oh, thank the gods! The infernal itching has subsided at long last.</string>
+                            <string>You have cured scabies.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -2231,8 +2260,10 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your bowels calm themselves.</string>
+                            <string>You have cured dysentery.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -2251,8 +2282,10 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The sores on your skin dry up and disappear.</string>
+                            <string>You have cured pox.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -2271,8 +2304,10 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your stomach becalms itself.</string>
+                            <string>You have cured vomiting.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -2291,8 +2326,10 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your muscles relax as the rigormortis subsides.</string>
+                            <string>You have cured rigormortis.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -2311,9 +2348,95 @@ mm.show_vessels(2)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>A feeling of health washes over you.</string>
+                            <string>You have cured sickening.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m cured asthma wafer</name>
+                        <script>mm.valid.wafer_cured_asthma()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your bronchial tubes open up and your asthma is cured.</string>
+                            <string>You have cured asthma.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m wafer no effect</name>
+                        <script>mm.valid.wafer_had_no_effect()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The wafer slides down your throat without effect.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>paralysis instant cure</name>
+                        <script>mm.valid.instant_cure_paralysis()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your muscles unlock; you are no longer paralysed.</string>
+                            <string>You have cured paralysis.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>wafer no affliction</name>
+                        <script>mm.valid.wafer_noaff(matches[2])</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>^You are not afflicted with (asthma|dysentery|haemophilia|paralysis|powersap|pox|scabies|rigormortis|sickening|vomiting)\.$</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2623,9 +2746,7 @@ mm.show_vessels(2)</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>m&amp;m sipped health</name>
-                        <script>mm.valid.sippedhealth()
-
-setTriggerStayOpen(&quot;Sip&quot;, 1)</script>
+                        <script>mm.valid.sippedhealth()</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>99</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -3183,8 +3304,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your nerves suddenly calm down.</string>
+                            <string>You have cured epilepsy.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3203,8 +3326,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Aaaahhh. No one is out to get you after all.</string>
+                            <string>You have cured paranoia.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3223,8 +3348,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The stinging feeling fades.</string>
+                            <string>You have cured sensitivity.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3243,8 +3370,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The confusion lifts from your mind and it is clear once again.</string>
+                            <string>You have cured confusion.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3263,8 +3392,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Prudence rules your psyche once again.</string>
+                            <string>You have cured recklessness.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3283,8 +3414,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your hallucinations cease to plague you.</string>
+                            <string>You have cured hallucinations.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3303,8 +3436,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Thank Estarra! Your clumsiness has been cured.</string>
+                            <string>You have cured clumsiness.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3323,8 +3458,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You aren't such a complete idiot anymore.</string>
+                            <string>You have cured stupidity.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -3343,12 +3480,183 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your terrible addiction to lovely potions seems to wane.</string>
+                            <string>You have cured addiction.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m cure anorexia lucidity</name>
+                        <script>mm.valid.sip_cured_anorexia()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Food is no longer repulsive to you.</string>
+                            <string>You have cured anorexia.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m major insanity</name>
+                        <script>mm.valid.sip_cured_massiveinsanity()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your sanity partially returns, but you still suffer from a major case of temporary insanity.</string>
+                            <string>Your sanity partially returns, but you still suffer from a massive case of temporary insanity.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m moderate insanity</name>
+                        <script>mm.valid.sip_cured_majorinsanity()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your sanity partially returns, but you still suffer from a moderate case of temporary insanity.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m slightinsanity</name>
+                        <script>mm.valid.sip_cured_moderateinsanity()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your sanity partially returns, but you still suffer from a slight case of temporary insanity.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m cured tempinsanity</name>
+                        <script>mm.valid.sip_cured_slightinsanity()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You no longer have any temporary insanity.</string>
+                            <string>You have cured temporaryinsanity.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>no beast present</name>
+                        <script>if mm.conf.beastfocus then
+	mm.config.set(&quot;beastfocus&quot;, false, true)
+	mm.echo(&quot;No beast present, turning off beast focus&quot;)
+end</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You have no beast here.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>bedevil hit</name>
+                        <script>mm.valid.bedevil_lucidity()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The plague of bedeviling sickness causes your insides to clench in sheer agony.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>no affliction lucidity</name>
+                        <script>mm.valid.lucidity_noaff(matches[2])</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>^You are not afflicted with (addiction|anorexia|clumsiness|confusion|epilepsy|hallucinations|paranoia|recklessness|sensitivity|stupidity)\.$</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>1</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>m&amp;m sip2</name>
                         <script>mm.valid.sip2()</script>
                         <triggerType>0</triggerType>
@@ -4277,7 +4585,7 @@ mm.show_vessels(1)</script>
                     <colorTriggerFgColor>#000000</colorTriggerFgColor>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
-                        <string>You take out some restorativeice salve and quickly rub it on your</string>
+                        <string>You take out some restorative ice and quickly rub it on your</string>
                         <string>1</string>
                     </regexCodeList>
                     <regexCodePropertyList>
@@ -4319,8 +4627,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The potion slides off your oily skin.</string>
+                            <string>The salve slides off your oily skin.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -4345,8 +4655,10 @@ mm.show_vessels(1)</script>
                             <string>Your left leg is healthy, and the salve has no effect.</string>
                             <string>Your right arm is healthy, and the salve has no effect.</string>
                             <string>Your right leg is healthy, and the salve has no effect.</string>
+                            <string>Your body is healthy, and the salve has no effect.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                             <integer>3</integer>
                             <integer>3</integer>
@@ -4358,7 +4670,8 @@ mm.show_vessels(1)</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>cured partially</name>
-                        <script>mm.valid.ice_healed_partially()</script>
+                        <script>--echo(&quot;\n partial heal trigger firing&quot;)
+mm.valid.ice_healed_partially()</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -4417,6 +4730,192 @@ mm.show_vessels(1)</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>cured ablaze</name>
+                        <script>mm.valid.ice_cured_ablaze()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The raging fire about your skin goes out.</string>
+                            <string>You have cured ablaze.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>applyice2</name>
+                        <script>mm.valid.applyice2()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>return true</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>4</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                </TriggerGroup>
+                <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Applied Ice to burns</name>
+                    <script></script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>3</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>You take out some restorative ice and quickly rub it on your body.</string>
+                        <string>Your burnt flesh is soothed.</string>
+                        <string>1</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                        <integer>3</integer>
+                        <integer>5</integer>
+                    </regexCodePropertyList>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>applyice1</name>
+                        <script>mm.valid.applyice1()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>return true</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>4</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>fourth degree burns</name>
+                        <script>mm.valid.ice_still_fourthdegreeburn()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You heal some of your burns, but you still have fourth degree burns.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>third degree burns</name>
+                        <script>mm.valid.ice_still_thirddegreeburn()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You heal some of your burns, but you still have third degree burns.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>second degree burns</name>
+                        <script>mm.valid.ice_still_seconddegreeburn()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You heal some of your burns, but you still have second degree burns.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>first degree burns</name>
+                        <script>mm.valid.ice_still_firstdegreeburn()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You heal some of your burns, but you still have first degree burns.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>cured burns</name>
+                        <script>mm.valid.ice_cured_firstdegreeburn()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You completely heal your burn damage.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>applyice2</name>
                         <script>mm.valid.applyice2()</script>
                         <triggerType>0</triggerType>
@@ -4451,15 +4950,13 @@ mm.show_vessels(1)</script>
                     <colorTriggerFgColor>#000000</colorTriggerFgColor>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
-                        <string>You take out some restorativeice salve and quickly rub it on your</string>
-                        <string>The salve mends your</string>
-                        <string>curing your afflictions.</string>
+                        <string>You take out some restorative ice and quickly rub it on your</string>
+                        <string>^The salve mends your (?:head|chest|gut|right arm|left arm|right leg|left leg), curing your afflictions\.$</string>
                         <string>1</string>
                     </regexCodeList>
                     <regexCodePropertyList>
                         <integer>2</integer>
-                        <integer>2</integer>
-                        <integer>0</integer>
+                        <integer>1</integer>
                         <integer>5</integer>
                     </regexCodePropertyList>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -5486,8 +5983,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>An ominous noise lifts from within your mind.</string>
+                            <string>You have cured manabarbs.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5506,8 +6005,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The oppressive whispering in your mind dies out.</string>
+                            <string>You have cured egovice.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5526,8 +6027,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The screeching fades away from your inner hearing.</string>
+                            <string>You have cured achromaticaura.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5546,8 +6049,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>The dark thrumming presence around you dissipates.</string>
+                            <string>You have cured powerspikes.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5566,8 +6071,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You no longer will inspire disloyalty among friends.</string>
+                            <string>You have cured disloyalty.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5586,8 +6093,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You are capable of offensive acts once more.</string>
+                            <string>You have cured pacifism.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5606,8 +6115,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You notice the glow illuminating you fades away.</string>
+                            <string>You have cured luminosity.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5626,8 +6137,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your aching, pain-wracked body is soothed and calmed.</string>
+                            <string>You have cured healthleech.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5646,8 +6159,32 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You return to the normal timestream.</string>
+                            <string>You have cured aeon.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m cure slickness steam</name>
+                        <script>mm.valid.steam_cured_slickness()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your glands cease their oily secretion.</string>
+                            <string>You have cured slickness.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5689,6 +6226,153 @@ mm.show_vessels(1)</script>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>still major timewarp</name>
+                        <script>mm.valid.steam_cured_massivetimewarp()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The warping of time lightens, but you are still majorly warped.</string>
+                            <string>The warping of time lightens, but you are still massively warped.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>still moderate timewarp</name>
+                        <script>mm.valid.steam_cured_majortimewarp()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The warping of time lightens, but you are still moderately warped.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>still minor timewarp</name>
+                        <script>mm.valid.steam_cured_moderatetimewarp()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The warping of time lightens, but you are still minorly warped.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>cured timewarp</name>
+                        <script>mm.valid.steam_cured_minortimewarp()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Time no longer warps around you.</string>
+                            <string>You have cured timewarp.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>no beast present</name>
+                        <script>if mm.conf.beastfocus then
+	mm.config.set(&quot;beastfocus&quot;, false, true)
+	mm.echo(&quot;No beast present, turning off beast focus&quot;)
+end</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You have no beast here.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>bedeviled</name>
+                        <script>mm.valid.bedevil_steam()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The plague of bedeviling sickness causes your insides to clench in sheer agony.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>not afflicted</name>
+                        <script>mm.valid.steam_noaff(matches[2])</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>^You are not afflicted with (achromaticaura|aeon|disloyalty|egovice|healthleech|luminosity|manabarbs|pacifism|powerspikes|slickness)\.$</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -5888,8 +6572,10 @@ mm.show_vessels(1)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You aren't such a complete idiot anymore.</string>
+                            <string>You have cured stupidity.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -10876,6 +11562,28 @@ mm.defs.lost_fire()</script>
                             <string>You may not take another dose of allheale so soon.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>m&amp;m cure aeon generic</name>
+                        <script>mm.valid.generic_aeon()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You return to the normal timestream.</string>
+                            <string>You have cured aeon.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -22498,8 +23206,10 @@ resetFormat()</script>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
                         <string>Your muscles unlock; you are no longer paralysed.</string>
+                        <string>You have cured paralysis. </string>
                     </regexCodeList>
                     <regexCodePropertyList>
+                        <integer>3</integer>
                         <integer>3</integer>
                     </regexCodePropertyList>
                 </Trigger>
@@ -22646,8 +23356,10 @@ resetFormat()</script>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
                         <string>You return to the normal timestream.</string>
+                        <string>You have cured aeon.</string>
                     </regexCodeList>
                     <regexCodePropertyList>
+                        <integer>3</integer>
                         <integer>3</integer>
                     </regexCodePropertyList>
                 </Trigger>
@@ -24847,7 +25559,7 @@ mm.valid.proper_prone()</script>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Bedevil</name>
                         <script>mm.valid.simpleunknownany()</script>
                         <triggerType>0</triggerType>
@@ -25444,7 +26156,12 @@ if not (mm.valid[&quot;simple&quot;..aff] or mm.valid[&quot;affmsg_&quot;..aff])
   return
 end
 
-(mm.valid[&quot;affmsg_&quot;..aff] or mm.valid[&quot;simple&quot;..aff])()</script>
+if (aff == &quot;an unknown ailment&quot; or aff == &quot;an unknown affliction&quot;) and mm.knownaff then
+	mm.knownaff = nil
+	--not really unknown
+else
+	(mm.valid[&quot;affmsg_&quot;..aff] or mm.valid[&quot;simple&quot;..aff])()
+end</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -26408,28 +27125,6 @@ mm.valid.simpleopengut()</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Tangled</name>
-                        <script>mm.valid.symp_tangled()</script>
-                        <triggerType>0</triggerType>
-                        <conditonLineDelta>99</conditonLineDelta>
-                        <mStayOpen>0</mStayOpen>
-                        <mCommand></mCommand>
-                        <packageName></packageName>
-                        <mFgColor>#ff0000</mFgColor>
-                        <mBgColor>#ffff00</mBgColor>
-                        <mSoundFile></mSoundFile>
-                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
-                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
-                        <regexCodeList>
-                            <string>You are too tangled up to do that.</string>
-                            <string>Tight bindings cling to you, making that impossible.</string>
-                        </regexCodeList>
-                        <regexCodePropertyList>
-                            <integer>3</integer>
-                            <integer>3</integer>
-                        </regexCodePropertyList>
-                    </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Inquisition</name>
                         <script></script>
                         <triggerType>0</triggerType>
@@ -27213,6 +27908,26 @@ mm.valid.simplestun()</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Roped</name>
+                        <script>mm.valid.symp_roped()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You are too tangled up to do that.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Planar</name>
                         <script>if not next(mm.affl) then
   mm.valid.simpleunknownmental()
@@ -27545,10 +28260,12 @@ mm.valid.simpleunknownany()</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Leg must be working</name>
+                        <name>damagedleftleg symptom</name>
                         <script>-- this needs to know which afflictions can give this line, so it can ignore adding known if the system knows it has them
 
-mm.valid.simpleunknownany()</script>
+--mm.valid.simpleunknownany()
+
+mm.valid.symp_damagedleftleg()</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -27561,10 +28278,68 @@ mm.valid.simpleunknownany()</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>Your left leg must be working in order to do that.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>damagedrightleg symptom</name>
+                        <script>mm.valid.symp_damagedrightleg()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
                             <string>Your right leg must be working in order to do that.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>damagedleftarm symptom</name>
+                        <script>mm.valid.symp_damagedleftarm()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your left arm must be free.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>damagedrightarm symptom</name>
+                        <script>mm.valid.symp_damagedrightarm()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your right arm must be free.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -28656,6 +29431,49 @@ end</script>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
                         <string>You gently breathe fire over four pipes until they are burning nicely.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>m&amp;m connect</name>
+                    <script>mm.connected()
+
+if mm.conf.paused then mm.dont_unpause_login = true
+else mm.app(&quot;on&quot;, true) end</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>                        A G E  O F  A S C E N S I O N</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>m&amp;m missing tinderbox</name>
+                    <script>mm.valid.missing_tinderbox()</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>You have nothing in your inventory capable of starting a fire.</string>
                     </regexCodeList>
                     <regexCodePropertyList>
                         <integer>3</integer>
@@ -30108,6 +30926,7 @@ mm.valid.proper_prone()</script>
                         <string>A youthful fink leaps forward and your vision goes black as he gouges your eyes out with his thumbs.</string>
                         <string>A Daughter of Darkness opens her mouth and a terrible shriek issues forth from her throat, causing painful reverberations in your mind.</string>
                         <string>Grasping you firmly in its talons, a snow eagle drives its beak firmly into your eye socket and plucks out your eye.</string>
+                        <string>The brilliant halo around a flickering coronuli flares brightly before all goes black.</string>
                     </regexCodeList>
                     <regexCodePropertyList>
                         <integer>3</integer>
@@ -30120,6 +30939,7 @@ mm.valid.proper_prone()</script>
                         <integer>3</integer>
                         <integer>3</integer>
                         <integer>1</integer>
+                        <integer>3</integer>
                         <integer>3</integer>
                         <integer>3</integer>
                         <integer>3</integer>
@@ -33346,7 +34166,7 @@ mm.valid.proper_prone()</script>
                     <colorTriggerFgColor>#000000</colorTriggerFgColor>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
-                        <string>^\w+ charges in from the \w+ and slams into you, impaling (?:her|his) bardiche deep in your gut\.$</string>
+                        <string>^\w+ charges in from the \w+ and slams into you, impaling (?:her|his) \w+ deep in your gut.$</string>
                         <string>^\w+ charges in from the \w+ on .+ and slams into you, impaling (?:her|his) bardiche deep in your gut\.$</string>
                     </regexCodeList>
                     <regexCodePropertyList>
@@ -39408,7 +40228,8 @@ echo&quot;\n&quot;</script>
                 </Trigger>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Scarab left</name>
-                    <script>mm.valid.druidry_scarab_left()</script>
+                    <script>mm.valid.druidry_scarab_left()
+</script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>99</conditonLineDelta>
                     <mStayOpen>0</mStayOpen>
@@ -43031,7 +43852,7 @@ mm.valid.simpleunknownmental()</script>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>MalefactGem</name>
                     <script>mm.valid.simpleunknownany()
-mm.valid.simpleanorexia()</script>
+mm.valid.simpleasthma()</script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>50</conditonLineDelta>
                     <mStayOpen>0</mStayOpen>
@@ -48175,7 +48996,9 @@ mm.valid.simpledamagedhead()</script>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Aeon</name>
                         <script>mm.valid.simplestun(4)
-mm.valid.got_aeon()</script>
+mm.valid.got_aeon()
+if skyTimer then killTimer(skyTimer) end
+skyTimer = tempTimer(3.1-getNetworkLatency(), [[mm.valid.stun_woreoff()]])</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -48439,7 +49262,7 @@ end</script>
                 <regexCodePropertyList/>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Humid</name>
-                    <script>mm.valid.simplevapors()</script>
+                    <script>mm.valid.simpleparanoia()</script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>0</conditonLineDelta>
                     <mStayOpen>0</mStayOpen>
@@ -52376,7 +53199,7 @@ disableTrigger(&quot;m&amp;m last trigger&quot;)</script>
                     <script></script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>0</conditonLineDelta>
-                    <mStayOpen>4</mStayOpen>
+                    <mStayOpen>10</mStayOpen>
                     <mCommand></mCommand>
                     <packageName></packageName>
                     <mFgColor>#ff0000</mFgColor>
@@ -52386,8 +53209,10 @@ disableTrigger(&quot;m&amp;m last trigger&quot;)</script>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
                         <string>^\w+ strikes at your</string>
+                        <string>^Recovering from (?:his|her) parry,</string>
                     </regexCodeList>
                     <regexCodePropertyList>
+                        <integer>1</integer>
                         <integer>1</integer>
                     </regexCodePropertyList>
                     <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -52426,10 +53251,10 @@ end</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^The blade of \w+'s sword slices deeply into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (light|heavy|critical) wounded\.$</string>
-                                <string>^\w+'s axe sinks heavily into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (light|heavy|critical) wounded\.$</string>
-                                <string>^\w+ slices into your (head|chest|gut|left arm|right arm|left leg|right leg) with the blade of (?:his|her) weapon, leaving it (light|heavy|critical) wounded\.$</string>
-                                <string>^\w+ batters your (head|chest|gut|left arm|right arm|left leg|right leg) with the haft of (?:his|her) weapon, leaving it (light|heavy|critical) wounded\.$</string>
+                                <string>^The blade of \w+'s sword slices deeply into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+'s axe sinks heavily into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ slices into your (head|chest|gut|left arm|right arm|left leg|right leg) with the blade of (?:his|her) weapon, leaving it (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ batters your (head|chest|gut|left arm|right arm|left leg|right leg) with the haft of (?:his|her) weapon, leaving it (lightly|heavily|critically) wounded\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>1</integer>
@@ -52458,11 +53283,19 @@ end</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^\w+ hits you with assault, (head|chest|gut|left arm|right arm|left leg|right leg) now (light|heavy|cirtical) wounded\.$</string>
-                                <string>^\w+ hits you with sweep, (head|chest|gut|left arm|right arm|left leg|right leg) now (light|heavy|critical) wounded\.$</string>
-                                <string>^\w+ hits you with (?:cutting|blunt) sunder, (head|chest|gut|left arm|right arm|left leg|right leg) now (light|heavy|critical) wounded\.$</string>
+                                <string>^\w+ hits you with assault, (head|chest|gut|left arm|right arm|left leg|right leg) now (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ hits you with sweep, (head|chest|gut|left arm|right arm|left leg|right leg) now (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ hits you with (?:cutting|blunt) sunder, (head|chest|gut|left arm|right arm|left leg|right leg) now (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ carves into you with a vicious assault, leaving your (head|chest|gut|left arm|right arm|left leg|right leg) (lightly|heavily|critically) wounded\.$</string>
+                                <string>^Attempting to sunder bone, \w+ batters your (head|chest|gut|left arm|right arm|left leg|right leg) with the haft of (?:his|her) weapon, leaving it (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ sinks the blade of (?:his|her) axe into your (head|chest|gut|left arm|right arm|left leg|right leg) with a wide, sweeping arc\.$</string>
+                                <string>^Sundering the flesh, \w+ cuts viciously into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (lightly|heavily|critically) wounded\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>1</integer>
+                                <integer>1</integer>
+                                <integer>1</integer>
+                                <integer>1</integer>
                                 <integer>1</integer>
                                 <integer>1</integer>
                                 <integer>1</integer>
@@ -52489,8 +53322,8 @@ end</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^\w+'s blade bites into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (light|heavy|critical) wounded\.$</string>
-                                <string>^\w+'s bludgeon crunches sickeningly into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (light|heavy|critical) wounded\.$</string>
+                                <string>^\w+'s blade bites into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+'s bludgeon crunches sickeningly into your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (lightly|heavily|critically) wounded\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>1</integer>
@@ -52517,10 +53350,14 @@ end</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^\w+ lunges forcefully into (?:his|her) strike, leaving your (head|chest|gut|left arm|right arm|left leg|right leg) (light|heavy|cirtical) wounded\.$</string>
-                                <string>^\w+ hits you with crush, (head|chest|gut|left arm|right arm|left leg|right leg) now (light|heavy|critical) wounded\.$</string>
+                                <string>^\w+ lunges forcefully into (?:his|her) strike, leaving your (head|chest|gut|left arm|right arm|left leg|right leg) (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ hits you with crush, (head|chest|gut|left arm|right arm|left leg|right leg) now (lightly|heavily|critically) wounded\.$</string>
+                                <string>^The sound of shattering bone sounds as \w+ crushes your (head|chest|gut|left arm|right arm|left leg|right leg), leaving it (lightly|heavily|critically) wounded\.$</string>
+                                <string>^\w+ lunges forcefully into (?:his|her) strike, leaving your (head|chest|gut|left arm|right arm|left leg|right leg) (lightly|heavily|critically) wounded\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>1</integer>
+                                <integer>1</integer>
                                 <integer>1</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
@@ -52622,8 +53459,10 @@ mm.valid.simplebleeding(150)</script>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
                                 <string>^\w+ hits you with impale\.$</string>
+                                <string>^(\w+) sinks the blade of a (.+) deep into your gut, impaling you.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>1</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
@@ -53241,8 +54080,10 @@ mm.valid.simplebruising(50)</script>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
                                 <string>^\w+ hits you with smashchest\.$</string>
+                                <string>^The force of \w+'s strike leaves you stunned\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>1</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
@@ -53605,6 +54446,26 @@ mm.addwounds(&quot;ice&quot;,&quot;haymaker&quot;, wound_loc)</script>
                         </regexCodePropertyList>
                     </Trigger>
                 </TriggerGroup>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>bruising on attack line</name>
+                    <script>mm.valid.simplebruising(tonumber(matches[2]))</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^Your bruising damages you for (\d+) health\.$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
             </TriggerGroup>
         </TriggerGroup>
     </TriggerPackage>
@@ -53650,6 +54511,13 @@ mm.addwounds(&quot;ice&quot;,&quot;haymaker&quot;, wound_loc)</script>
                 <command></command>
                 <packageName></packageName>
                 <regex>^mm ?show$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>Show your focus list</name>
+                <script>mm.showfocus()</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^mm ?show (f|focus)$</regex>
             </Alias>
             <Alias isActive="yes" isFolder="no">
                 <name>Show overhaul menu</name>
@@ -55110,7 +55978,10 @@ end</script>
 	[&quot;sprawled&quot;]           = &quot;prone&quot;,
 	[&quot;temporaryinsanity&quot;]  = &quot;insanity&quot;,  
 	[&quot;transfix&quot;]           = &quot;transfixed&quot;,
-    [&quot;an unknown affliction&quot;] = &quot;unknownany&quot;,
+  	[&quot;an unknown affliction&quot;] = &quot;unknownany&quot;,
+	[&quot;sickening&quot;]  				= &quot;taintsick&quot;,
+	[&quot;luminosity&quot;]					= &quot;illuminated&quot;,
+	[&quot;collapsedlung&quot;]			= &quot;collapsedlungs&quot;,
 }</script>
                     <eventHandlerList/>
                 </Script>
@@ -55119,10 +55990,10 @@ end</script>
                 <name>Miscallaneous</name>
                 <packageName></packageName>
                 <script>mm.wounds_data.ice = mm.wounds_data.ice or {
-	onehand_nonpower = 1,
-	onehand_power = 2,
-	twohand_nonpower = 2,
-	twohand_power = 4
+	onehand_nonpower = 5,
+	onehand_power = 10,
+	twohand_nonpower = 12,
+	twohand_power = 24
 }
 
 mm.wounds_data.iceupdate = mm.wounds_data.iceupdate or {
@@ -55277,17 +56148,17 @@ end</script>
 
     -- new version file can not exist if we didn't download a system previously
     if f then
-      writtenversion = f:read(&quot;*a&quot;)
+		writtenversion = f:read(&quot;*a&quot;)
+		f:close()
     end
 
-    if not writtenversion or writtenversion:trim() ~= s:trim() or not lfs.attributes(getMudletHomeDir()..&quot;/m&amp;m/downloads/&quot;..string.format(&quot;%s m&amp;m.zip&quot;, mm.me.name)) then
+    if not writtenversion or writtenversion:trim() ~= s:trim() or not lfs.attributes(getMudletHomeDir()..&quot;/m&amp;m/downloads/&quot;..string.format(&quot;%s m&amp;m.zip&quot;, mm.me.class)) then
       if mm.announceupdates == &quot;checking&quot; then mm.echof(&quot;A new m&amp;m is available! You're on %s, latest is %s. I'll download it for you.&quot;, mm.version, s:trim()) end
       mm.downloadnewsystem(s:trim())
     else
       if mm.announceupdates == &quot;checking&quot; then mm.echof(&quot;A new m&amp;m is available and has been downloaded for you! You're on %s, latest is %s.&quot;, mm.version, s:trim()) end
       mm.showupdatereminder(writtenversion)
     end
-
   elseif filename == tostring(mm.downloadedsystem) then
     mm.checkingupdates = false
 
@@ -55328,7 +56199,7 @@ function mm.checkforupdate(type)
     end
 
     mm.checkingupdates = true
-    downloadFile(mm.versionfile, &quot;http://mm.vadisystems.com/current_version&quot;)
+    downloadFile(mm.versionfile, &quot;http://m-mf.github.io/m-mf/release/current_version&quot;)
 
     if type == &quot;checking&quot; then
       mm.echof(&quot;Checking for updates...&quot;)
@@ -55340,11 +56211,11 @@ function mm.checkforupdate(type)
 
       local location = getMudletHomeDir()..&quot;/m&amp;m/downloads/available_version&quot;
       if io.exists(location) then
-        local s,m = os.remove(location)
+        --local s,m = os.remove(location)
         if not s then mm.echof(&quot;Couldn't remove the %s file (error was: %s) - this might be a problem.&quot;, location, m) end
       end
 
-      location = downloadfolder..string.format(&quot;%s m&amp;m.zip&quot;, mm.me.name)
+      location = downloadfolder..string.format(&quot;%s m&amp;mf.zip&quot;, mm.me.class)
       if io.exists(location) then
         local s,m = os.remove(location)
         if not s then mm.echof(&quot;Couldn't delete the old m&amp;m zip (located at %s), because of: %s. This might be a problem.&quot;, location, m) end
@@ -55357,8 +56228,8 @@ end
 
 -- downloads the system &amp; updates the system version saved
 function mm.downloadnewsystem(newversion)
-  mm.downloadedsystem = downloadfolder..string.format(&quot;%s m&amp;m.zip&quot;, mm.me.name)
-  local downloadurl = [[http://vadisystems.com/mm-r/r/]]..mm.me.name..[[ m&amp;m.zip]]
+  mm.downloadedsystem = downloadfolder..string.format(&quot;%s m&amp;mf.zip&quot;, mm.me.class)
+  local downloadurl = [[http://m-mf.github.io/m-mf/release/]]..mm.me.class..[[.m-mf.v]]..newversion..[[.zip]]
 
   downloadFile(mm.downloadedsystem, downloadurl)
   mm.newdownloadedversion = newversion
@@ -55461,7 +56332,7 @@ function mm_doupdate_click()
   mm.doupdatelabel:hide()
   mm.dontupdatelabel:hide()
 
-  local name = mm.me.name
+  local name = mm.me.class
 
   if not (uninstallPackage and installPackage) then
     mm.updatelabel:echo([[&lt;p align=&quot;center&quot; style=&quot;font-size:10pt; color:white&quot;&gt;Can't update your m&amp;m. You didn't update to Mudlet 2.1, and your current Mudlet lacks the features necessary. Go update first please.&lt;p&gt;]])
@@ -55470,7 +56341,7 @@ function mm_doupdate_click()
 
   function mm_update_system()
     uninstallPackage(name..&quot; m&amp;m&quot;)
-    installPackage(getMudletHomeDir()..&quot;/m&amp;m/downloads/&quot;..string.format(&quot;%s m&amp;m.zip&quot;, mm.me.name))
+    installPackage(getMudletHomeDir()..&quot;/m&amp;m/downloads/&quot;..string.format(&quot;%s m&amp;mf.zip&quot;, mm.me.class))
 
     mm.echof(&quot;m&amp;m updated! Restart Mudlet, and you'll be all done.&quot;)
 

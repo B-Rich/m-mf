@@ -134,6 +134,7 @@ signals.systemstart:connect(function ()
 end)
 #end
 
+signals.connected = luanotify.signal.new()
 signals.quit = luanotify.signal.new()
 #if DEBUG then
 signals.quit:connect(function ()
@@ -152,6 +153,7 @@ signals.gmcproominfo = luanotify.signal.new()
 signals.gmcpcharitemslist = luanotify.signal.new()
 signals.gmcpcharskillsinfo = luanotify.signal.new()
 signals.gmcpcharskillslist = luanotify.signal.new()
+signals.gmcpcharskillsgroups = luanotify.signal.new()
 signals.gmcpcharitemsupdate = luanotify.signal.new()
 
 signals["mmapper updated pdb"] = luanotify.signal.new()
@@ -200,6 +202,10 @@ signals.enablegmcp:add_post_emit(function ()
     signals.relogin:emit()
     echof("Welcome back!")
   end
+
+  -- app("off", true) -- this triggers a dict() run too early before login
+  if dont_unpause_login then dont_unpause_login = nil
+  else conf.paused = false end
 end)
 signals.newroom = luanotify.signal.new()
 signals.newarea = luanotify.signal.new()
@@ -266,9 +272,13 @@ conf.manause = 35
 conf.bashing = true
 
 -- have skills?
-conf.focusbody = true
+conf.focusbody = false
 conf.focusmind = false
 conf.cleanse = false
+
+conf.beastfocus = false
+conf.aeonfocus = true
+conf.powerfocus = false
 
 conf.commandecho = true
 conf.blockcommands = true
@@ -353,6 +363,7 @@ me.skills  = {}
 me.wielded = {}
 me.dmplist = {}
 me.locks   = {}
+me.focus   = {}
 
 $(
 local paths = {}; paths.oldpath = package.path; package.path = package.path..";./?.lua;./bin/?.lua;"; local pretty = require "pl.pretty"; package.path = paths.oldpath
@@ -468,9 +479,24 @@ sk.overhauldata = {
   vomiting       = { newbalances = {"wafer"}, oldbalances = {"purgative"}, replaces = {"vomitblood"}},
   rigormortis    = { newbalances = {"wafer"}, oldbalances = {"herb"}},
   taintsick      = { newbalances = {"wafer"}, oldbalances = {"focus"}, replaces = {"crotamine"}},
-  anorexia       = { newbalances = {"lucidity"}, oldbalances = {"herb"}},
+  anorexia       = { newbalances = {"lucidity"}, oldbalances = {"herb"}, replaces = {"throatlock"}},
   asthma         = { newbalances = {"wafer"}, oldbalances = {"salve"}},
   slickness      = { newbalances = {"steam"}, oldbalances = {"herb"}},
+  blind          = { newbalances = {"wafer"}, oldbalances = {"herb"}},
+  trueblind      = { newbalances = {"wafer"}, oldbalances = {"herb"}},
+  deaf           = { newbalances = {"wafer"}, oldbalances = {"herb"}},
+  truedeaf       = { newbalances = {"wafer"}, oldbalances = {"herb"}},
+  attraction       = { newbalances = {"wafer"}, oldbalances = {"herb"}},
+  massivetimewarp = { newbalances = {"steam"}, oldbalances = {"herb","focus"}},
+  majortimewarp = { newbalances = {"steam"}, oldbalances = {"herb","focus"}},
+  moderatetimewarp = { newbalances = {"steam"}, oldbalances = {"herb","focus"}},
+  minortimewarp = { newbalances = {"steam"}, oldbalances = {"herb","focus"}},
+  massiveinsanity = { newbalances = {"lucidity"}, oldbalances = {"herb","focus"}},
+  majorinsanity = { newbalances = {"lucidity"}, oldbalances = {"herb","focus"}},
+  moderateinsanity = { newbalances = {"lucidity"}, oldbalances = {"herb","focus"}},
+  slightinsanity = { newbalances = {"lucidity"}, oldbalances = {"herb","focus"}},
+  
+
 
 }
 sk.overhaulredirects = {}
@@ -612,7 +638,21 @@ signals.systemstart:connect(function ()
   end
 end)
 
+-- load the focus list
+signals.systemstart:connect(function ()
+  local conf_path = getMudletHomeDir().."/m&m/config/focus"
+
+  if lfs.attributes(conf_path) then
+    local t = {}
+    table.load(conf_path, t)
+    update(me.focus, t)
+  end
+end)
+
+
 signals.saveconfig:connect(function () table.save(getMudletHomeDir() .. "/m&m/config/lustlist", me.lustlist) end)
+
+signals.saveconfig:connect(function () table.save(getMudletHomeDir() .. "/m&m/config/focus", me.focus) end)
 
 -- load the ignore list
 signals.systemstart:connect(function ()
